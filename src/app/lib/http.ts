@@ -2,7 +2,7 @@ import { QueryClient } from '@tanstack/react-query';
 import {ITask} from "@/app/shared/interfaces/task.interface";
 
 export const queryClient = new QueryClient();
-const baseUrl = 'https://next-js-task-1vzh.vercel.app/';
+const baseUrl = 'https://next-js-task-1vzh.vercel.app';
 
 export async function fetchTasks({ signal }: any) {
     let url = `${baseUrl}/api/tasks`;
