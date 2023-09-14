@@ -1,11 +1,7 @@
-import {NextApiRequest, NextApiResponse} from "next";
-import {ObjectId} from "bson";
 import {NextResponse} from "next/server";
 import {getTask} from "@/app/lib/getTask";
-import {getTasks} from "@/app/lib/getTasks";
 import {TaskObject, TasksObject} from "@/app/api/tasks/route";
 import {updateTask} from "@/app/lib/updateTask";
-import {ITask} from "@/app/shared/interfaces/task.interface";
 
 export type Params = {
     params: {
@@ -14,7 +10,7 @@ export type Params = {
 }
 
 export const GET = async (
-    req: NextApiRequest,
+    req: Request,
     context: Params
 ): Promise<NextResponse<TasksObject | TaskObject>> => {
 
