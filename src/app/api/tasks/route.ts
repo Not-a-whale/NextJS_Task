@@ -17,8 +17,8 @@ export interface TaskObject {
 }
 
 export const GET = async (
-    req: NextApiRequest,
-    res: NextApiResponse<TasksObject | ObjectId | { error: string }>
+    req: Request,
+    res: any
 ): Promise<NextResponse<TasksObject>> => {
     let data = await getTasks();
 
