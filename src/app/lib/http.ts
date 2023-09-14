@@ -2,7 +2,7 @@ import { QueryClient } from '@tanstack/react-query';
 import {ITask} from "@/app/shared/interfaces/task.interface";
 
 export const queryClient = new QueryClient();
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'http://127.0.0.1:3000';
 
 export async function fetchTasks({ signal }: any) {
     let url = `${baseUrl}/api/tasks`;
@@ -81,7 +81,7 @@ export async function createNewEvent({ task }: any) {
 
 export async function deleteTasks(taskIds: string[]) {
     console.log(taskIds)
-    const response = await fetch(`http://localhost:3000/api/tasks`, {
+    const response = await fetch(`http://127.0.0.1:3000/api/tasks`, {
         method: 'DELETE',
         body: JSON.stringify(taskIds)
     });
@@ -98,7 +98,7 @@ export async function deleteTasks(taskIds: string[]) {
 
 export async function updateTasks(taskIds: string[]) {
     console.log(taskIds)
-    const response = await fetch(`http://localhost:3000/api/tasks`, {
+    const response = await fetch(`http://127.0.0.1:3000/api/tasks`, {
         method: 'PATCH',
         body: JSON.stringify(taskIds)
     });
